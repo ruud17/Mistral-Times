@@ -1,16 +1,13 @@
-const todo = (state, action) => {
+export const todo = (state = [], action) => {
+  let todoId = 0;
   switch (action.type) {
-     case ‘ADD_TODO’:
-      return […state, action.text]
+    case 'ADD_TODO':
+      return [...state, {
+        id: todoId++,
+        value:action.value
+      }];
 
-     case ‘ALERT_TODO’:
-        return state.map(todo =>
-                if (todo.text !== action.text) {
-                  return todo
-                }
-            )
-
-     default:
+    default:
       return state
-    }
+  }
 }

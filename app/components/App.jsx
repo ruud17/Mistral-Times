@@ -1,57 +1,17 @@
 import React from 'react';
-import TodoList from './TodoList';
-import AddTodoForm from './AddTodo';
+import Header from './common/Header';
+import Routes from '../routes';
+// import {HashRouter as Router, Link, Route} from 'react-router-dom';
+// import Home from './home/Home';
+// import Dashboard from './dashboard/Dashboard';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: [
-        {
-          id: 1,
-          text: 'Youtube'
-        }, {
-          id: 2,
-          text: 'Facebook'
-        }
-      ],
-      inputValue: ''
-    };
-    this.addItem = this.addItem.bind(this);
-    this.setInputField = this.setInputField.bind(this);
-  }
-
-  addItem(event) {
-    event.preventDefault();
-    const newItem = {
-      id: this.state.items.length + 1,
-      text: this.state.inputValue
-    };
-    this.setState((prevState) => {
-      return {
-        items: [
-          ...prevState.items,
-          newItem
-        ]
-      }
-    })
-  }
-
-  setInputField(event) {
-    this.setState({inputValue: event.target.value});
-  }
-
   render() {
     return (
       <div>
-        <AddTodoForm
-          inputValue={this.inputValue}
-          setInputField={this.setInputField}
-          addItem={this.addItem}
-          />
-        <TodoList items={this.state.items}/>
+        <Header/>
+        <Routes/>
       </div>
-
     )
   }
 }
