@@ -3,19 +3,15 @@ import {Route, Switch} from 'react-router-dom';
 import Home from './components/home/Home';
 import Dashboard from './components/dashboard/Dashboard';
 import NotFound from './components/common/NotFound';
+import CreatePraiseOrCriticism from './components/create/createPraiseOrCriticism';
 
 const Routes = () => (
-  <main>
     <Switch>
-      <Route path='/home' component={Home}/>
+      <Route path='/create' component={CreatePraiseOrCriticism}/>
       <Route path='/dashboard' component={Dashboard}/>
-      <Route exact path='/' render={() => (
-        <h1>Welcome</h1>
-      )}/>
+      <Route exact path='/' component={Home}/>
       <Route path='*' component={NotFound}/>
-
     </Switch>
-  </main>
 );
 
 export default Routes;
