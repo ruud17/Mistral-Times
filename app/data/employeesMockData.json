@@ -1,0 +1,19 @@
+{
+  "data": [{
+      "id": 1,
+      "label": "John"
+    },
+    {
+      "id": 2,
+      "label": "Miles"
+    },
+    {
+      "id": 3,
+      "label": "Charles"
+    },
+    {
+      "id": 4,
+      "label": "Herbie"
+    }
+  ]
+}

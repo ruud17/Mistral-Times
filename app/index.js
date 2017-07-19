@@ -2,18 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import {HashRouter as Router} from 'react-router-dom';
-//import {createStore} from 'redux';
-//import Routes from './routes';
+import configureStore from './store/configureStore';
+import {Provider} from 'react-redux'
+import {getEmployees} from './actions/employeeActions';
+
 import './css/style.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-//import {Provider} from 'react-redux'
+import '../node_modules/bootstrap/dist/css/bootstrap-theme.min.css';
+import '../node_modules/font-awesome/css/font-awesome.min.css';
 
-//const store = createStore(CounterReducer);
+const store = configureStore();
 
 const render = () => ReactDOM.render((
-  <Router>
-    <App/>
-  </Router>
+  <Provider store={store}>
+    <Router>
+      <App/>
+    </Router>
+  </Provider>
 ), document.getElementById('root'));
 
 render();

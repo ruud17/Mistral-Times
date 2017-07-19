@@ -53,8 +53,8 @@ const config = {
         loader: 'url-loader?limit=100000'
       },
       {
-        test: /bootstrap.+\.(jsx|js)$/,
-        loader: 'imports?jQuery=jquery,$=jquery,this=>window'
+        test: /\.json$/,
+        loader: 'raw-loader'
       }
     ]
   },
